@@ -1,0 +1,38 @@
+# Example configuration file for spin system simulations.
+# It contains all the necessary parameters and ranges for running spin system simulations.
+
+# Create a file named 'simulation.yaml' based on this template and modify the parameters as needed for your simulations.
+
+
+config_name: test                               # Name of the generated dataset.
+generation_type: grid                           # Parameter generation strategy: random or grid.
+num_simulations: 1                              # Number of simulations; ignored for grid generation.
+values_per_term: 5                              # Values sampled per parameter; ignored for random generation.
+
+base_parameters:
+  L: 32                                         # Linear system size of the spin lattice.
+  mc_steps_factor: 500                          # Average Monte Carlo steps per spin and temperature step.
+  start_temp: 2                                 # Initial simulation temperature.
+  end_temp: 0.001                               # Final simulation temperature.
+  temp_steps: 50                                # Number of temperature steps.
+  dipole_cutoff: 5                              # Maximum distance for dipole interactions.
+
+hamiltonian_terms:
+  use_heisenberg: true                          # Enable Heisenberg exchange interaction.
+  use_dipole: true                              # Enable dipole interaction.
+  use_dmi: true                                 # Enable Dzyaloshinskii-Moriya interaction.
+  use_ani: true                                 # Enable anisotropy interaction.
+
+parameter_ranges:
+  J:                                            # Exchange interaction strength.
+  - 1.0
+  - 1.0
+  D:                                            # Dipole strength.
+  - 0.0
+  - 0.2
+  DMI:                                          # DMI strength.
+  - 0
+  - 1.5
+  K:                                            # Anisotropy: negative favors easy-plane, positive easy-axis.
+  - -0.8
+  - 0.8

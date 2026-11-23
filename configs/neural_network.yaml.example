@@ -1,0 +1,31 @@
+# Neural network hyperparameters by dataset.
+# The default section applies to all datasets unless overridden below.
+# Dataset-specific entries under configs take precedence over default values.
+
+default:
+  seed: 42                                      # Random seed for reproducible training.
+  train_size: 0.8                               # Fraction of the dataset used for training.
+  epochs: 100                                   # Maximum number of training epochs.
+  batch_size: 128                               # Number of samples processed per optimization step.
+  patience: 10                                  # Epochs without improvement before early stopping.
+  lr: 0.001                                     # Initial learning rate.
+  weight_decay: 0                               # L2 regularization strength.
+  min_lr: 0.0000001                             # Lower bound for learning-rate scheduling.
+  dropout: 0.0                                  # Dropout probability.
+  print_every: 5                                # Print training progress every N epochs.
+  warmup_epochs: 5                              # Number of warmup epochs for the learning rate.
+
+configs:
+  # Override values for the final dataset.
+  final:
+    seed: 223
+    train_size: 0.8
+    epochs: 100
+    patience: 100
+    batch_size: 1000
+    lr: 0.0001
+    min_lr: 0.000001
+    weight_decay: 0.0001
+    dropout: 0.0
+    warmup_epochs: 0
+    print_every: 1

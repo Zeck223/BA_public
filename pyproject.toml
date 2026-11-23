@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spin-system"
+version = "0.1.0"
+description = "Monte-Carlo-Simulationen und neuronale Netze für 2D-Spinsysteme"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+	"numpy",
+	"pandas",
+	"matplotlib",
+	"numba",
+	"PyYAML",
+	"scikit-learn",
+	"scikit-image",
+	"seaborn",
+	"scipy",
+	"joblib",
+	"networkx",
+	"imageio[ffmpeg]",
+	"torch",
+	"torchvision",
+]
+[project.scripts]
+lms = "spin_system.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spin_system"]
+

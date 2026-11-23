@@ -1,0 +1,1 @@
+"""Shared command-line and data-processing helpers for generation workflows."""

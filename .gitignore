@@ -1,0 +1,13 @@
+__pycache__
+.env
+.github
+.venv-BA
+.vscode
+
+# Code workspace if used
+bachelorarbeit.code-workspace
+
+# Ignore configuration files for neural networks and simulations
+configs/parameter_configs/
+configs/simulation.yaml
+configs/neural_network.yaml
